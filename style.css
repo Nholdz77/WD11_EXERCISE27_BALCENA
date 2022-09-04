@@ -1,0 +1,142 @@
+#headerText{
+  padding-top: 5px;
+  padding-bottom: 0;
+}
+body {
+  background: url("bg1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:0;
+  padding:0;
+}
+img {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 120px;
+  align-items: center;
+  gap: 200px;
+}
+.col-red h1 {
+  width: 350px;
+
+  padding: 20px, 50px;
+  line-height: 50px;
+  height: 50px;
+  background: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 100;
+
+  clip-path: polygon(12% 0%, 100% 0, 88% 100%, 0% 100%);
+}
+.col-blue {
+  display: flex;
+  flex-direction: column;
+}
+.col-blue h1 {
+  width: 300px;
+  padding: 20px, 50px;
+  line-height: 50px;
+  height: 50px;
+  background: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 100;
+  color: rgb(7, 248, 51);
+  clip-path: circle(20%);
+}
+.col-green h1 {
+  width: 500px;
+  line-height: 50px;
+  height: 50px;
+  background: transparent;
+  text-align: center;
+  text-transform: lowercase;
+  font-weight: 30;
+
+  clip-path: polygon(12% 0%, 100% 0, 88% 100%, 0% 100%);
+}
+.display-box {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  margin: 0;
+  padding: 0;
+ 
+}
+#coloredBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  clip-path: circle(40%);
+  color: rgb(18, 19, 18);
+}
+.btnCon {
+  display: flex;
+  margin-right: 30px;
+  justify-content: space-around;
+  align-items: center;
+  gap: 80px;
+}
+.btnCon button {
+  width: 100px;
+  border-radius: 10px;
+  line-height: 50px;
+  height: 50px;
+  margin-left: 110px;
+  border-style: solid 1px black;
+  background: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 100;
+  color: black;
+  
+  /* clip-path: polygon(12% 0%, 100% 0, 88% 100%, 0% 100%); */
+}
+.btnCon button:hover{
+background-color: rgb(20,203,48); 
+}
+.btnCon label {
+  width: 40px;
+  height: 40px;
+  font-size: x-large;
+}
+.btnCon input {
+  width: 50px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: large;
+  border: 1px solid black;
+  background: transparent;
+}
+.btnCon input:hover{
+  background-color: rgb(20,203,48);
+}
+.resetBtn button {
+  width: 100px;
+  border-radius: 10px;
+  margin-bottom: 100px;
+  margin-top: 10px;
+  margin-right: 250px;
+  line-height: 50px;
+  height: 50px;
+  border-style: solid 1px black;
+  background: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 100;
+  color: black;
+  /* clip-path: polygon(12% 0%, 100% 0, 88% 100%, 0% 100%);*/
+}
+.resetBtn button:hover{
+    background-color: rgb(20,203,48); 
+}
+.inputIntervalDiv {
+  padding-right: 320px;
+}

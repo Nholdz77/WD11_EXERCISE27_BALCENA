@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Exercise 27</title>
+  </head>
+
+  <body onload="start()">
+    <h1 style="text-align: center" id="headerText">ASYNCHRONOUS JAVASCRIPT</h1>
+
+    <div class="container">
+      <div class="display-box">
+        <div id="coloredBox">
+          <h1 style="text-align: center" id="headerText2"></h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-red">
+          <h1 id="colorText"></h1>
+        </div>
+        <!-- <div class="col-blue">
+             <h1 id="countdown"></h1>
+            </div>-->
+        <div class="col-green">
+          <h1 id="countdown"></h1>
+        </div>
+      </div>
+      <div class="btnCon">
+        <div>
+          <label for="">
+            Input Timer:
+            <input
+              style="text-align: center"
+              type="number"
+              id="inputNumber"
+              min="10"
+              max="100"
+            />
+          </label>
+        </div>
+        <button id="btnStart" onclick="startRGB();">Start</button>
+        <div class="inputIntervalDiv">
+          <label for="">
+            Input Interval:
+            <input
+              style="text-align: center"
+              type="number"
+              id="inputNumber2"
+              min="1"
+              max="5"
+            />
+          </label>
+        </div>
+      </div>
+      <div
+        class="resetBtn"
+        style="display: flex; justify-content: center; align-items: center"
+      >
+        <button id="btnReset" onclick="stopRGB();">Stop</button>
+        <button id="btnReset1" onclick="resetInput();">reset</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    function sparklingText() {
+      let sampleheading = document.getElementById("headerText");
+      let color = ["red", "blue", "green"];
+      let generateColor = Math.floor(Math.random() * 3);
+      sampleheading.style.color = color[generateColor];
+    }
+
+    function start() {
+      intervalId = setInterval(sparklingText, 500);
+      let stopBtn = document.getElementById("stopBtn");
+      btnStart.disabled = true;
+    }
+
+    let timeInterval2 = document.getElementById("inputNumber2");
+    let timeleft = document.getElementById("inputNumber");
+    timeleft.addEventListener("input", function () {
+      if (timeInterval2 != 0 && timeleft != 0) {
+        btnStart.disabled = false;
+      }
+    });
+
+    function generateRGB() {
+      let headerText2 = document.getElementById("headerText2");
+      let colorbox = document.getElementById("coloredBox");
+      let R = Math.floor(Math.random() * 256);
+      let G = Math.floor(Math.random() * 256);
+      let B = Math.floor(Math.random() * 256);
+      let colorText = document.getElementById("colorText");
+      let countdown = document.getElementById("countdown");
+      colorText.innerHTML = `rgb(${R}, ${G}, ${B})`;
+      headerText2.innerHTML = rgbToHex(R, G, B);
+      colorbox.style.background = rgbToHex(R, G, B);
+      colorText.style.background = rgbToHex(R, G, B);
+      countdown.style.background = rgbToHex(R, G, B);
+
+      // const luma = 0.2126 * R + 0.7152 * R + 0.0722 * B;
+      // if (luma < 30){
+      //   headerText2.style.color = "#FFFFFF";
+      // } else {
+      //   headerText2.style.color = "#000000";
+      // };
+
+      let luma = (R + G + B) / 3;
+      if (luma < 128) {
+        headerText2.style.color = "#FFFFFF";
+        colorText.style.color = "#FFFFFF";
+        countdown.style.color = "#FFFFFF";
+      } else {
+        headerText2.style.color = "#000000";
+        colorText.style.color = "#000000";
+        countdown.style.color = "#000000";
+      }
+
+      function rgbToHex(R, G, B) {
+        return (
+          "#" + ((1 << 24) + (R << 16) + (G << 8) + B).toString(16).slice(1)
+        );
+      }
+    }
+
+    function stopRGB() {
+      clearInterval(intervalId);
+      clearInterval(downloadTimer);
+      // document.getElementById("countdown").innerHTML = "";
+      // let stopBtn = document.getElementById("stopBtn");
+    }
+
+    let downloadTimer = null;
+    function startRGB() {
+      let timeInterval =
+        Number(document.getElementById("inputNumber2").value) * 1000;
+      intervalId = setInterval(generateRGB, timeInterval);
+      let countdown = document.getElementById("countdown");
+      let timeleft = document.getElementById("inputNumber").value;
+      downloadTimer = setInterval(function () {
+        if (timeleft <= 0) {
+          clearInterval(downloadTimer);
+          clearInterval(intervalId);
+        }
+        countdown.innerHTML = `${timeleft} second/s remaining to stop!`;
+        timeleft -= 1;
+      }, 1000);
+    }
+
+    function resetInput() {
+      let headerText2 = document.getElementById("headerText2");
+      let colorText = document.getElementById("colorText");
+      let countdown = document.getElementById("countdown");
+      let colorbox = document.getElementById("coloredBox");
+      
+      document.getElementById("colorText").innerHTML = "";
+      
+      document.getElementById("inputNumber").value = "";
+      document.getElementById("inputNumber2").value = "";
+      colorbox.style.background = "none";
+      colorText.style.background = "none";
+      countdown.style.background = "none";
+      countdown.innerHTML = "";
+      headerText2.innerHTML = "";
+      btnStart.disabled = true;
+    }
+  </script>
+</html>
