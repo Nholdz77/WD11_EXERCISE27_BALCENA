@@ -213,7 +213,7 @@ button:hover{
   clip-path: polygon(12% 0%, 100% 0, 88% 100%, 0% 100%);
 }
 .col-green h2 {
-  width: 350px;
+  width: 450px;
   line-height: 50px;
   height: 50px;
   background: transparent;
@@ -250,5 +250,37 @@ button:hover{
     width: 40px;
     height: 40px;
     font-size: large;
+  }
+}
+@media (max-width: 750px){
+  .btnCon {
+    display: flex;
+    margin-right: 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+  }
+  .resetBtn{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    gap: 0px;
+
+  }
+  .btnCon label {
+    width: 40px;
+    height: 40px;
+    font-size: large;
+  }
+  .col-green h2 {
+    width: 450px;
+    line-height: 50px;
+    height: 50px;
+    background: transparent;
+    text-align: center;
+    text-transform: lowercase;
+    font-weight: 30;
+  
+    clip-path: polygon(12% 0%, 100% 0, 88% 100%, 0% 100%);
   }
 }
