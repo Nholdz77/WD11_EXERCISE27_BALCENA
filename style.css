@@ -143,7 +143,7 @@ background-color: rgb(20,203,48);
   
   
   .row {
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     gap: 0px;
@@ -223,4 +223,32 @@ button:hover{
 
   clip-path: polygon(12% 0%, 100% 0, 88% 100%, 0% 100%);
 }
+.col-green, .col-red{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+}
+@media (max-width: 200px){
+  .btnCon {
+    display: flex;
+    margin-right: 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+  }
+  .resetBtn{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    gap: 0px;
+
+  }
+  .btnCon label {
+    width: 40px;
+    height: 40px;
+    font-size: large;
+  }
 }
