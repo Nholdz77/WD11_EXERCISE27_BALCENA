@@ -79,7 +79,7 @@ img {
   height: 50px;
   margin-left: 110px;
   border-style: solid 1px black;
-  background: transparent;
+  background: rgb(20,203,48); ;
   text-align: center;
   text-transform: uppercase;
   font-weight: 100;
@@ -88,12 +88,13 @@ img {
   /* clip-path: polygon(12% 0%, 100% 0, 88% 100%, 0% 100%); */
 }
 .btnCon button:hover{
-background-color: rgb(20,203,48); 
+background-color: transparent; 
 }
 .btnCon label {
   width: 40px;
   height: 40px;
   font-size: x-large;
+  color: #000000;
 }
 .btnCon input {
   width: 50px;
@@ -101,10 +102,11 @@ background-color: rgb(20,203,48);
   border-radius: 5px;
   font-size: large;
   border: 1px solid black;
-  background: transparent;
+  background: rgb(20,203,48);
+  color: #000000;
 }
 .btnCon input:hover{
-  background-color: rgb(20,203,48);
+  background-color: transparent;
 }
 .resetBtn{
   display: flex; 
@@ -120,7 +122,7 @@ background-color: rgb(20,203,48);
   line-height: 50px;
   height: 50px;
   border-style: solid 1px black;
-  background: transparent;
+  background: rgb(20,203,48); ;
   text-align: center;
   text-transform: uppercase;
   font-weight: 100;
@@ -128,7 +130,7 @@ background-color: rgb(20,203,48);
   /* clip-path: polygon(12% 0%, 100% 0, 88% 100%, 0% 100%);*/
 }
 .resetBtn button:hover{
-    background-color: rgb(20,203,48); 
+    background-color: transparent; 
 }
 .inputIntervalDiv {
   padding-right: 320px;
@@ -140,7 +142,15 @@ background-color: rgb(20,203,48);
     justify-content: center;
     align-items: center;
   }
-  
+  .btnCon input{
+    color:#ffffff
+  }
+  .btnCon label {
+    width: 40px;
+    height: 40px;
+    font-size: x-large;
+    color: #ffffff;
+  }
   
   .row {
     display: block;
@@ -168,11 +178,11 @@ background-color: rgb(20,203,48);
     line-height: 50px;
     height: 50px;
     border-style: solid 1px black;
-    background: transparent;
+    background:rgb(20,203,48);
     text-align: center;
     text-transform: uppercase;
     font-weight: 100;
-    color: black;
+    color: #ffffff;
 }
 .btnCon {
   display: flex;
@@ -188,20 +198,19 @@ background-color: rgb(20,203,48);
   height: 50px;
   margin-left: 0px;
   border-style: solid 1px black;
-  background: transparent;
+  background: rgb(20,203,48);
   text-align: center;
   text-transform: uppercase;
   font-weight: 100;
-  color: black;
+  color: #ffffff;
   
   /* clip-path: polygon(12% 0%, 100% 0, 88% 100%, 0% 100%); */
 }
-button:hover{
-  background-color: rgb(20,203,48); 
+.btnCon button:hover{
+  background-color:transparent; 
 }
 .col-red h2 {
   width: 350px;
-
   padding: 20px, 50px;
   line-height: 50px;
   height: 50px;
@@ -280,7 +289,12 @@ button:hover{
     text-align: center;
     text-transform: lowercase;
     font-weight: 30;
-  
     clip-path: polygon(12% 0%, 100% 0, 88% 100%, 0% 100%);
   }
+  .resetBtn button:hover{
+    background-color: transparent; 
+}
+button:hover{
+  background-color:transparent; 
+}
 }
